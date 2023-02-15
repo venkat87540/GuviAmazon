@@ -1,0 +1,30 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
+public class Main{
+    public static void main(String[] args){
+        Scanner s = new Scanner(System.in);
+        int a = s.nextInt();
+        int arr[] = new int[a];
+        for(int i=0;i<a;i++){
+            arr[i] = s.nextInt();
+        }
+        List<Integer> l = new ArrayList<Integer>();
+        int count = 0 ;
+        for(int i=0;i<a;i++){
+            for(int j=i+1;j<a;j++){
+                int c =(a-1)-i;
+                if(arr[i] >= arr[j]){
+                    count +=1;
+                }
+                if(count == c){
+                    l.add(arr[i]);
+                }
+            }count =0;
+        }
+        for(int i=0;i<l.size();i++){
+            System.out.print(l.get(i)+" ");
+        }
+        System.out.print(arr[a-1]);
+    }
+}
